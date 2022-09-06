@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>NK STORE</title>
+    <link href="~/Public/images/logobalo.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Public/plugins/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="~/Public/css/LayoutSite.css" rel="stylesheet" />
+    @RenderSection("header", required: false)
+</head>
+<body>
+    <section class="header clearfix">
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-2 py-3 logo">
+                    <img src="~/Public/images/logobalo.png" alt="Logo" class="img-fluid" />
+                </div>
+                <div class="col-md-6 py-5">
+
+                    <form action="/tim-kiem" class="d-flex">
+                        <input name="SearchString" class="outline-primary form-control me-2" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
+                        <button class="btn btn-sm btn-outline-primary" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+
+                </div>
+                <div class="col-md-4 text-center py-3">
+                    @Html.Action("Account", "Module")
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mainmenu clearfix bg-main ">
+        <div class="container ">
+            @Html.Action("MainMenu", "Module")
+        </div>
+    </section>
+
+    <section class="maincontent clearfix">
+        @RenderBody()
+    </section>
+    <section class="footer clearfix bg-footer py-4 text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>NK Store</h3>
+                    <ul>
+                        <li><strong>Hotline</strong>: 079 313 3888</li>
+                        <li><strong>Email</strong>: nkstore@gmail.com</li>
+                        <li><strong>Địa chỉ</strong>: 35 Lê Văn Việt, Hiệp Phú,tp.Thủ Đức tp.HCM </li>
+                        <li><strong>Giờ mở cửa</strong>  : Thứ 2 – Chủ Nhật Hàng Tuần: Từ 9h00 đến 22h00</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    @Html.Action("MenuFooter", "Module")
+                </div>
+                <div class="col-md-4">
+                    <h3>Follow US</h3>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <a href="https://www.facebook.com/nulavietnam/">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-1">
+                            <a href="https://www.instagram.com/nulavietnam/">
+                                <i class="fab fa-instagram-square"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-1">
+                            <a href="https://www.youtube.com/nulachannel/UC4laStpu8xuPlqIy6r95tmQ">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                            <a href="https://localhost:44341/">
+                                <img src="~/Public/images/logobalo.png" class="img-fluid" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="copyright clearfix bg-footer py-2">
+        <div class="container border-top border-light">
+            <div class="row">
+                <div class=" text-light text-center">
+                    Thiết kế bởi <strong>Nguyễn Thị Ngọc Kiều</strong>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    @RenderSection("footer", required: false)
+</body>
+</html>
+
